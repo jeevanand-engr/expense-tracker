@@ -21,7 +21,7 @@ with app.app_context():
 
 @app.route('/health')
 def health():
-    return jsonify({'status': 'ok'})
+    return jsonify({'status': 'ok', 'version': '2.0', 'app': 'expense-tracker'})
 
 @app.route('/expenses', methods=['GET'])
 def get_expenses():
