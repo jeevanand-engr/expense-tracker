@@ -1,5 +1,12 @@
+awscliv2.zip
+aws/
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.lock.hcl
 venv/
 __pycache__/
 *.pyc
 *.db
 .env
+
