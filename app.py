@@ -54,7 +54,5 @@ def summary():
         by_category[e.category] = by_category.get(e.category, 0) + e.amount
     return jsonify({'total': total, 'by_category': by_category, 'count': len(expenses)})
 
-raise Exception("Deliberate crash to test ECS rollback!")
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
