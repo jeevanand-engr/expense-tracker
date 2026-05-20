@@ -21,7 +21,10 @@ with app.app_context():
 
 @app.route('/health')
 def health():
-    return jsonify({'status': 'ok', 'version': '2.0', 'app': 'expense-tracker'})
+    app_env = os.getenv('APP_ENV')
+    if not app_env:
+        raise ValueError("APP_ENV environment variable is not set!")
+    return jsonify({'status': 'ok', 'version': '2.0', 'env': app_env})
 
 @app.route('/expenses', methods=['GET'])
 def get_expenses():
