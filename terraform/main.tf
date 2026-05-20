@@ -137,6 +137,9 @@ resource "aws_ecs_task_definition" "app" {
     name  = "expense-tracker"
     image = var.ecr_image_uri
     portMappings = [{ containerPort = 5000 }]
+    environment = [
+      { name = "APP_ENV", value = "production" }
+    ]
     logConfiguration = {
       logDriver = "awslogs"
       options = {
